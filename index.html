@@ -3,21 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maintenance! - Tekkodev.tk</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/all.js"></script>
+    <link rel="stylesheet" href="css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Portfolio - Tek.</title>
 </head>
-<body>
-    <script>
-        AOS.init();
-      </script>
-    <div class="container" data-aos="zoom-out" data-aos-duration="1250">
-        <img src="sad.png" alt="sad" class="img" data-aos="zoom-in" data-aos-duration="1250">
-        <div class="text">
-            <h1>Work in progress!</h1>
-            <p>Sorry! This website is under construction!</p>
+<body onload="loader()">
+    <div id="loaderdiv">
+        <div class="loader" id="loader">
+            <svg viewBox="0 0 80 80">
+                <circle id="test" cx="40" cy="40" r="32"></circle>
+            </svg>
+        </div>
+    
+        <div class="loader triangle" id="loader">
+            <svg viewBox="0 0 86 80">
+                <polygon points="43 8 79 72 7 72"></polygon>
+            </svg>
+        </div>
+    
+        <div class="loader" id="loader">
+            <svg viewBox="0 0 80 80">
+                <rect x="8" y="8" width="64" height="64"></rect>
+            </svg>
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="container" id="container">
+            <div id="image">
+                <img src="img/propicpng.png" id="logo">
+            </div>
+            <div id="text">
+                <span id="verticalLine"></span>
+                <span id="horizontalLine"></span>
+                <span id="verticalsmallLeft"></span>
+                <span id="verticalsmallCenter"></span>
+                <span id="verticalsmallRight"></span>
+                <span id="ptextLeft">Who am I?</span>
+                <span id="ptextCenter">My Works</span>
+                <span id="ptextRight">Contacts</span>
+                <span id="pWhoAmI">
+                    <i class="fas fa-arrow-circle-left" id="arrow1"></i>
+                    Hi, my name is Amedeo. I'm 16 years old and I live in Catania, Sicily, Italy. My hobbies are gaming and programming.
+					I like a lot motorsport and racing games.
+                    I can speak English and Italian.
+                    I'm a supporter on Synchrom.eu © Teamspeak.
+                    My favourite games are League of Legends, CS:GO, osu!, F1, Assetto Corsa series.
+                    My skills:
+                    <div class="skills">
+                        <ul>
+                            <li class="html">HTML</li>
+                            <li class="css">CSS</li>
+                            <li class="php">PHP</li>
+                            <li class="js">JavaScript</li>
+                            <li class="py">Python</li>
+                            <li class="c">C++</li>
+                        </ul>
+                    </div>
+                </span>
+                <i class="fas fa-arrow-circle-left" id="arrow2"></i>
+                <span id="pWorks">
+                    Starty: The multipurpose template<br><br>
+                    <img src="img/gif.gif" alt="starty"><br><br>
+                    Teamspeak 3 dynamic banner <br><br>
+                    <img src="img/dynamicbanner.png" alt="banner" id="bannerimg"><br><br>
+                    More projects incoming...
+                </span>
+                <span id="pContacts">
+                    <i class="fas fa-arrow-circle-left" id="arrow3"></i>
+                    <b>Steam:</b><u><a href="https://steamcommunity.com/id/Teeeek/" target="_blank"> Tek.</a></u><br><br>
+                    <b>Teamspeak:</b><u><a href="ts3server://synchrom.eu" target="_blank"> synchrom.eu</a></u><br><br>
+                    <b>Discord:</b><u><a href="discord.com/users/233641916816818176" target="_blank"> Tekko#7691</a></u><br><br>
+                    <b>Telegram:</b><u><a href="https://t.me/zTekstorm" target="_blank"> Tek.</a></u><br><br>
+                    <b>Fiverr:</b><u><a href="https://www.fiverr.com/ztekstorm" target="_blank"> ztekstorm</a></u><br><br>
+                    <b>MyAnimeList:</b><u><a href="https://myanimelist.net/animelist/Tekko_" target="_blank"> Tekko_</a></u><br><br>
+                    <b>Anilist:</b><u><a href="https://anilist.co/user/Tekkoo/" target="_blank"> Tekkoo</a></u><br><br>
+                    <b>osu!:</b><u><a href="https://osu.ppy.sh/users/11583386" target="_blank"> zTekstorm</a></u><br><br>
+                </span>
+            </div>
         </div>
     </div>
 </body>

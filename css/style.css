@@ -1,0 +1,572 @@
+/*
+Portfolio - Tek.
+Developed by Amedeo Giuseppe Rizzo aka Tek.
+All rights reserved.
+
+--CSS--
+
+1) Html and body setups
+2) Loader
+
+*/
+
+/* 1) Html and body setups*/
+html {
+    -webkit-font-smoothing: antialiased;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    overflow: hidden;
+  }  
+  * {
+    box-sizing: border-box;
+  }
+  *:before, *:after {
+    box-sizing: border-box;
+  } 
+  body {
+    min-height: 100vh;
+    background: #0C0000;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
+  }
+
+a:link{text-decoration: none;}
+a:visited{text-decoration: none}
+a{color: white;}
+
+/* 2) Loader */
+.loader {
+    --path: #2F3545;
+    --dot: #5B1816;
+    --duration: 3s;
+    width: 44px;
+    height: 44px;
+    position: relative;
+  }
+  .loader:before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    background: var(--dot);
+    top: 37px;
+    left: 19px;
+    -webkit-transform: translate(-18px, -18px);
+            transform: translate(-18px, -18px);
+    -webkit-animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+            animation: dotRect var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  .loader svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .loader svg rect,
+  .loader svg polygon,
+  .loader svg circle {
+    fill: none;
+    stroke: var(--path);
+    stroke-width: 10px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  .loader svg polygon {
+    stroke-dasharray: 145 76 145 76;
+    stroke-dashoffset: 0;
+    -webkit-animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+            animation: pathTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  .loader svg rect {
+    stroke-dasharray: 192 64 192 64;
+    stroke-dashoffset: 0;
+    -webkit-animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+            animation: pathRect 3s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  .loader svg circle {
+    stroke-dasharray: 150 50 150 50;
+    stroke-dashoffset: 75;
+    -webkit-animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+            animation: pathCircle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  .loader.triangle {
+    width: 48px;
+  }
+  .loader.triangle:before {
+    left: 21px;
+    -webkit-transform: translate(-10px, -18px);
+            transform: translate(-10px, -18px);
+    -webkit-animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+            animation: dotTriangle var(--duration) cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  }
+  
+  @-webkit-keyframes pathTriangle {
+    33% {
+      stroke-dashoffset: 74;
+    }
+    66% {
+      stroke-dashoffset: 147;
+    }
+    100% {
+      stroke-dashoffset: 221;
+    }
+  }
+  
+  @keyframes pathTriangle {
+    33% {
+      stroke-dashoffset: 74;
+    }
+    66% {
+      stroke-dashoffset: 147;
+    }
+    100% {
+      stroke-dashoffset: 221;
+    }
+  }
+  @-webkit-keyframes dotTriangle {
+    33% {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+    66% {
+      -webkit-transform: translate(10px, -18px);
+              transform: translate(10px, -18px);
+    }
+    100% {
+      -webkit-transform: translate(-10px, -18px);
+              transform: translate(-10px, -18px);
+    }
+  }
+  @keyframes dotTriangle {
+    33% {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+    66% {
+      -webkit-transform: translate(10px, -18px);
+              transform: translate(10px, -18px);
+    }
+    100% {
+      -webkit-transform: translate(-10px, -18px);
+              transform: translate(-10px, -18px);
+    }
+  }
+  @-webkit-keyframes pathRect {
+    25% {
+      stroke-dashoffset: 64;
+    }
+    50% {
+      stroke-dashoffset: 128;
+    }
+    75% {
+      stroke-dashoffset: 192;
+    }
+    100% {
+      stroke-dashoffset: 256;
+    }
+  }
+  @keyframes pathRect {
+    25% {
+      stroke-dashoffset: 64;
+    }
+    50% {
+      stroke-dashoffset: 128;
+    }
+    75% {
+      stroke-dashoffset: 192;
+    }
+    100% {
+      stroke-dashoffset: 256;
+    }
+  }
+  @-webkit-keyframes dotRect {
+    25% {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+    50% {
+      -webkit-transform: translate(18px, -18px);
+              transform: translate(18px, -18px);
+    }
+    75% {
+      -webkit-transform: translate(0, -36px);
+              transform: translate(0, -36px);
+    }
+    100% {
+      -webkit-transform: translate(-18px, -18px);
+              transform: translate(-18px, -18px);
+    }
+  }
+  @keyframes dotRect {
+    25% {
+      -webkit-transform: translate(0, 0);
+              transform: translate(0, 0);
+    }
+    50% {
+      -webkit-transform: translate(18px, -18px);
+              transform: translate(18px, -18px);
+    }
+    75% {
+      -webkit-transform: translate(0, -36px);
+              transform: translate(0, -36px);
+    }
+    100% {
+      -webkit-transform: translate(-18px, -18px);
+              transform: translate(-18px, -18px);
+    }
+  }
+  @-webkit-keyframes pathCircle {
+    25% {
+      stroke-dashoffset: 125;
+    }
+    50% {
+      stroke-dashoffset: 175;
+    }
+    75% {
+      stroke-dashoffset: 225;
+    }
+    100% {
+      stroke-dashoffset: 275;
+    }
+  }
+  @keyframes pathCircle {
+    25% {
+      stroke-dashoffset: 125;
+    }
+    50% {
+      stroke-dashoffset: 175;
+    }
+    75% {
+      stroke-dashoffset: 225;
+    }
+    100% {
+      stroke-dashoffset: 275;
+    }
+  }
+  .loader {
+    display: inline-block;
+    margin: 0 16px;
+    opacity: 1;
+    transition: opacity 1s;
+  }
+
+  .loaderdiv{
+      display: block;
+      opacity: 1;
+      transition: opacity 1s;
+  }
+  
+/* Main */
+#main{
+  display: none;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#logo{
+  opacity: 0;
+  transition: opacity 1s;
+  height: 184px;
+  transition: margin 1s;
+  transition: all 1s;
+  margin-top: 35%;
+}
+
+#image{
+  transition: margin 1s;
+  height: 0px;
+}
+
+#text{
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: top 1s;
+  margin: 0;
+  z-index: 2;
+}
+
+.container{
+  position: relative;
+  text-align: center;
+  height: 700px;
+  width: 700px;
+}
+
+@keyframes fadein{
+  0% { opacity:0; }
+  66% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-webkit-keyframes fadein{
+  0% { opacity:0; }
+  66% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@keyframes fadeout{
+  0% { opacity:1; }
+  66% { opacity:1; }
+  100% { opacity:0; }
+}
+
+@-webkit-keyframes fadeout{
+  0% { opacity:1; }
+  66% { opacity:1; }
+  100% { opacity:0; }
+}
+
+#verticalLine{
+  background: #bdc3c7;
+  margin-left:50%;
+  height: 0px;
+  width: 2px;
+  display: block;
+  transition: height 0.5s, opacity 0.5s;
+}
+
+#horizontalLine{
+  background: #bdc3c7;
+  width: 0px;
+  height: 2px;
+  display: block;
+  transition: width 0.5s, opacity 0.5s;
+}
+
+#verticalsmallLeft{
+  background: #bdc3c7;
+  height: 0px;
+  width: 2px;
+  display: block;
+  transition: height 0.5s, opacity 0.5s;
+}
+
+#verticalsmallCenter{
+  background: #bdc3c7;
+  height: 0px;
+  width: 2px;
+  display: block;
+  transition: height 0.5s, opacity 0.5s;
+  position: absolute;
+  top: 34.5%;
+  left: 50%;
+}
+
+#verticalsmallRight{
+  background: #bdc3c7;
+  height: 0px;
+  width: 2px;
+  display: block;
+  transition: height 0.7s, opacity 0.5s;
+  position: absolute;
+  top: 34.5%;
+  left: 100%;
+}
+
+p{
+  font-size: 20px;
+}
+
+#ptextLeft{
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  padding: 10px;
+  transition: opacity 0.5s, top 1s, left 1s, border 1s, transform 0.5s;
+}
+
+#ptextCenter{
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  padding: 10px;
+  transition: opacity 0.5s, top 1s, left 1s, border 1s, transform 0.5s;
+}
+
+#ptextRight{
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  padding: 10px;
+  transition: opacity 0.5s, top 1s, left 1s, border 1s, transform 0.5s;
+}
+
+.skills{
+  display: none;
+  width: 500px;
+  padding: 20px;
+  margin-left: 30px;
+  margin-top: -10%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#pWhoAmI{
+  display: none;
+  opacity: 0;
+  padding-top: 10px;
+  transition: opacity 1s;
+  position: absolute;
+  left: 0;
+  top: -70%;
+}
+
+#pContacts{
+  display: none;
+  opacity: 0;
+  padding-top: 10px;
+  transition: opacity 1s;
+  position: absolute;
+  left: -3.5%;
+  right: 0;
+  top: -70%;
+}
+
+#pWorks{
+  display: none;
+  opacity: 0;
+  padding-top: 10px;
+  transition: opacity 1s;
+  position: absolute;
+  left: -4%;
+  top: -90%;
+  right: 0;
+  height: 500px;
+  width: 650px;
+  overflow: auto;
+}
+
+li {
+  position: relative;
+  list-style: none;
+  margin: 50px 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+li:before{
+  content: "";
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background-color: rgba(54, 126, 223, .5);
+  border-radius: 1000px;
+}
+
+li:after{
+  content: "";
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  width: 0;
+  height: 15px;
+  background-color: rgba(54, 126, 223, 1);
+  border-radius: 1000px;
+  animation-duration: .7s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+li.html:after{
+  animation-name: html;
+}
+
+@keyframes html{
+  to {
+    width: 90%;
+  }
+}
+
+li.css:after{
+  animation-name: css;
+}
+
+@keyframes css{
+  to {
+    width: 90%;
+  }
+}
+
+li.php:after{
+  animation-name: php;
+}
+
+@keyframes php{
+  to {
+    width: 80%;
+  }
+}
+
+li.js:after{
+  animation-name: js;
+}
+
+@keyframes js{
+  to {
+    width: 40%;
+  }
+}
+
+li.py:after{
+  animation-name: py;
+}
+
+@keyframes py{
+  to {
+    width: 50%;
+  }
+}
+
+li.c:after{
+  animation-name: c;
+}
+
+@keyframes c{
+  to {
+    width: 50%;
+  }
+}
+
+#arrow1{
+  transform: scale(2);
+  position: absolute;
+  top: -6%;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+}
+
+#arrow2{
+  transform: scale(2);
+  position: absolute;
+  top: -110%;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+}
+
+#arrow3{
+  transform: scale(2);
+  position: absolute;
+  top: -10%;
+  opacity: 0;
+  transition: opacity 0.5s;
+  display: none;
+}
+
+#bannerimg{
+  height: 338px;
+}
